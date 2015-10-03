@@ -29,6 +29,10 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/grid', {
+        templateUrl: 'views/grid.html',
+        controller: 'GridCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

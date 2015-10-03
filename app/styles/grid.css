@@ -1,0 +1,9 @@
+.demo-card-square.mdl-card {
+  width: 140px;
+  height: 200px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  /*background:
+    url('../images/001.jpg') center  no-repeat #FFFFFF;*/
+}
