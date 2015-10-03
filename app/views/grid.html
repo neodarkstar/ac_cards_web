@@ -6,8 +6,8 @@
       </div>
       <form action="#">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4" />
-          <label class="mdl-textfield__label" for="sample4">{{card.name}}</label>
+          <input class="mdl-textfield__input" type="text" ng-model="quantity" ng-change="updateCount()" pattern="-?[0-9]*(\.[0-9]+)?" id="sample{{card.number}}" value="{{card.qty}}" />
+          <label class="mdl-textfield__label" for="sample{{card.number}}">{{card.name}}</label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
       </form>

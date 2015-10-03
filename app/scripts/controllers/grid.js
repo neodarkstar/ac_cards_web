@@ -10,7 +10,10 @@
 angular.module('webApp')
   .controller('GridCtrl', ['$scope','$resource', function($scope, $resource) {
 
-  $scope.cards = $resource('http://127.0.0.1:8080/api/cards', {}, { 'query': { method: 'GET', isArray: true}}).query();
+  $scope.cards = $resource('http://127.0.0.1:8080/api/users/1/cards', {}, { 'query': { method: 'GET', isArray: true}}).query();
 
+  $scope.updateCount = function(card, qty){
+    console.log(card);
+  };
 
 }]);
