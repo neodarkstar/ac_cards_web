@@ -28,3 +28,10 @@
   font-size: 16px;
   font-weight: 500;
 }
+
+.demo-card-image__filename.name {
+  float:left;
+}
+.demo-card-image__filename.qty {
+  float: right;
+}
