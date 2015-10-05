@@ -1,9 +1,30 @@
-.demo-card-square.mdl-card {
-  width: 100px;
-  height: 200px;
+.mdl-grid {
+  max-width: 1000px;
 }
-.demo-card-square > .mdl-card__title {
+
+.mdl-cell {
+  width: 150px;
+  margin: 2px;
+}
+
+.demo-card-image.mdl-card {
+  width: 150px;
+  min-height: 150px;
+  background: url('../images/gallery/001.png') top / cover;
+  background-position-y: -6px;
+}
+
+.demo-card-image.mdl-card.need {
+  opacity: 0.25;
+}
+
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.demo-card-image__filename {
   color: #fff;
-  /*background:
-    url('../images/001.jpg') center  no-repeat #FFFFFF;*/
+  font-size: 16px;
+  font-weight: 500;
 }
