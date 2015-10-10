@@ -54,7 +54,7 @@
                 </form>
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="login()">Login</button>
               </div>
-              <div ng-show="loggedOn">Hi! User <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="logout()">Logout</button></div>
+              <div ng-show="loggedOn">Hi! User<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="logout()">Logout</button></div>
             </span>
             <nav class="mdl-navigation" ng-repeat="menuItem in menuItems">
               <a class="mdl-navigation__link" href="{{menuItem.href}}">{{menuItem.name}}</a>
@@ -89,6 +89,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/material-design-lite/material.min.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -12,6 +12,10 @@ angular.module('webApp').controller('LoginCtrl', ['$scope','authService', '$loca
 
     $scope.loggedOn = false;
 
+    if(!_.isEmpty(sessionStorage.token)){
+      $scope.loggedOn = true;
+    }
+
     $scope.menuItems = [
       { href:"#/", name: 'Main' },
       { href:"#/grid", name: 'Gallery' }
