@@ -8,12 +8,14 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('GridCtrl', ['$scope','$resource', function($scope, $resource) {
+  .controller('GridCtrl', ['$scope','$resource', '$http', function($scope, $resource, $http) {
 
-  $resource('http://127.0.0.1:8080/api/users/1/cards', {}, { 'query': { method: 'GET', isArray: true }}).query().$promise.then(function(cards){
+  var authorization = { 'Authorization': sessionStorage.token };
+
+  $resource('http://www.ideainprogress.com:8080/api/users/1/cards', {}, { 'query': { method: 'GET', isArray: true, headers: authorization }}).query().$promise.then(function(cards){
 
     cards.forEach(function(card){
-      if(card.qty == 0){
+      if(card.qty === 0){
         card.style = 'need';
       }
     });
@@ -23,7 +25,7 @@ angular.module('webApp')
   });
 
   $scope.updateCount = function(card, qty){
-    $resource('http://127.0.0.1:8080/api/users/1/cards/:cardId',
+    $resource('/api/users/1/cards/:cardId',
       { cardId: card },
       { 'updateCount':{ method: 'PUT' } }
     ).updateCount({qty:qty});

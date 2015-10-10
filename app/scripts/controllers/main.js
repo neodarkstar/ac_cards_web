@@ -8,10 +8,10 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl',[ 'authService', function (authService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);

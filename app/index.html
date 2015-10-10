@@ -9,11 +9,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/material.min.css">
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
     <link rel="stylesheet" href="styles/grid.css">
     <!-- endbuild -->
   </head>
@@ -36,12 +37,27 @@
               </nav>
             </div>
           </header>
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Home</span>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="#/">Main</a>
-              <a class="mdl-navigation__link" href="#/grid">Gallery</a>
-              <a class="mdl-navigation__link" href="#/grid">Grid</a>
+          <div class="mdl-layout__drawer" ng-controller="LoginCtrl">
+            <span class="mdl-layout-title">
+              <div ng-hide="loggedOn">
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="username" ng-model="credentials.username" />
+                    <label class="mdl-textfield__label" for="sample1">Username</label>
+                  </div>
+                </form>
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="password" id="password" ng-model="credentials.password"/>
+                    <label class="mdl-textfield__label" for="sample1">Password</label>
+                  </div>
+                </form>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="login()">Login</button>
+              </div>
+              <div ng-show="loggedOn">Hi! User <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="logout()">Logout</button></div>
+            </span>
+            <nav class="mdl-navigation" ng-repeat="menuItem in menuItems">
+              <a class="mdl-navigation__link" href="{{menuItem.href}}">{{menuItem.name}}</a>
             </nav>
           </div>
           <main class="mdl-layout__content">
@@ -72,6 +88,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,6 +97,8 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/grid.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/authService.js"></script>
         <!-- endbuild -->
         <script src="/bower_components/material-design-lite/material.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
