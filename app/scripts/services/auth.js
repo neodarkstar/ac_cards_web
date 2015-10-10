@@ -6,7 +6,7 @@ angular.module('webApp').factory('Auth', [ '$http', function($http){
     login: function(credentials){
       return $http({
         method: 'POST',
-        url: 'http://localhost:8080/api/login',
+        url: 'http://www.ideainprogress.com:8080/api/login',
         data: credentials
       }).then(function(res){
         sessionStorage.setItem('token', res.data.token);
@@ -16,7 +16,7 @@ angular.module('webApp').factory('Auth', [ '$http', function($http){
     isValid: function(){
       return $http({
         method: 'GET',
-        url: 'http://localhost:8080/api/login/validate',
+        url: 'http://www.ideainprogress.com:8080/api/login/validate',
         headers: { authorization: sessionStorage.getItem('token')}
       });
     },
