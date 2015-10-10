@@ -18,7 +18,7 @@ angular.module('webApp').controller('LoginCtrl', ['$scope','Auth', '$location','
 
     $scope.menuItems = [
       { href:"#/", name: 'Main' },
-      { href:"#/grid", name: 'Gallery' }
+      { href:"#/gallery", name: 'Gallery' }
     ];
 
     $scope.credentials = {
@@ -30,7 +30,7 @@ angular.module('webApp').controller('LoginCtrl', ['$scope','Auth', '$location','
       Auth.login($scope.credentials).then(function(data){
         $scope.loggedOn = true;
         $scope.profileInfo = User.getProfile();
-        $location.path('/grid');
+        $location.path('/gallery');
       }).catch(function(err){
         console.log(err);
       });

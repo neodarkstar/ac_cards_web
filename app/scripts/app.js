@@ -29,9 +29,9 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/grid', {
-        templateUrl: 'views/grid.html',
-        controller: 'GridCtrl'
+      .when('/gallery', {
+        templateUrl: 'views/gallery.html',
+        controller: 'GalleryCtrl'
       })
       .otherwise({
         redirectTo: '/'
