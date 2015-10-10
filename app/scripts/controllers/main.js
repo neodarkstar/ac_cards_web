@@ -8,7 +8,7 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('MainCtrl',[ 'authService', function (authService) {
+  .controller('MainCtrl',[ function() {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

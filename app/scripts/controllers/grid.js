@@ -12,7 +12,7 @@ angular.module('webApp')
 
   var authorization = { 'Authorization': sessionStorage.token };
 
-  $resource('http://www.ideainprogress.com:8080/api/users/1/cards', {}, { 'query': { method: 'GET', isArray: true, headers: authorization }}).query().$promise.then(function(cards){
+  $resource('http://localhost:8080/api/users/1/cards', {}, { 'query': { method: 'GET', isArray: true, headers: authorization }}).query().$promise.then(function(cards){
 
     cards.forEach(function(card){
       if(card.qty === 0){

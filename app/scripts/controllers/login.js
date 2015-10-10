@@ -7,8 +7,8 @@
  * # GridCtrl
  * Controller of the webApp
  */
-angular.module('webApp').controller('LoginCtrl', ['$scope','authService', '$location',
-  function($scope, authService, $location) {
+angular.module('webApp').controller('LoginCtrl', ['$scope','Auth', '$location','User',
+  function($scope, Auth, $location, User) {
 
     $scope.loggedOn = false;
 
@@ -27,8 +27,9 @@ angular.module('webApp').controller('LoginCtrl', ['$scope','authService', '$loca
     };
 
     $scope.login = function(){
-      authService.login($scope.credentials).then(function(data){
+      Auth.login($scope.credentials).then(function(data){
         $scope.loggedOn = true;
+        $scope.profileInfo = User.getProfile();
         $location.path('/grid');
       }).catch(function(err){
         console.log(err);
@@ -38,7 +39,7 @@ angular.module('webApp').controller('LoginCtrl', ['$scope','authService', '$loca
     $scope.logout = function(){
       $scope.loggedOn = false;
       $location.path('#/');
-      sessionStorage.token = '';
+      Auth.logout();
     }
 
 }]);
