@@ -1,0 +1,26 @@
+<div class="mdl-grid collection">
+
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric"></th>
+            <th>Region</th>
+            <th>Qantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="card in cards">
+            <td class="mdl-data-table__cell--non-numeric">{{card.name}}</td>
+            <td class="mdl-data-table__cell--non-numeric">NA</td>
+            <td>
+              <div style="width:50px">
+                <input class="mdl-textfield__input" type="text" value="{{card.qty}}" style="width: 50px; text-align: right" ng-blur="updateCount(card.number,card.qty)" ng-model="card.qty">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>

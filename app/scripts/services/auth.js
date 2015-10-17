@@ -9,8 +9,8 @@ angular.module('webApp').factory('Auth', [ '$http', function($http){
         url: 'http://www.ideainprogress.com:8080/api/login',
         data: credentials
       }).then(function(res){
-        sessionStorage.setItem('token', res.data.token);
-        sessionStorage.setItem('userId', res.data.userId);
+        sessionStorage.token = res.data.token;
+        sessionStorage.userId = res.data.userId;
       })
     },
     isValid: function(){
