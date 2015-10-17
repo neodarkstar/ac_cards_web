@@ -1,8 +1,8 @@
-.mdl-grid {
+.gallery.mdl-grid {
   max-width: 1000px;
 }
 
-.mdl-cell {
+.gallery.mdl-cell {
   width: 150px;
   margin: 2px;
 }

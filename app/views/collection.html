@@ -1,26 +1,58 @@
+<style>
+.card_image {
+  width: 50px;
+  min-height: 50px;
+  background: url('../images/gallery/001.png') top / cover;
+  background-position-y: -6px;
+}
+</style>
+
 <div class="mdl-grid collection">
 
     <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
-      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-        <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric"></th>
-            <th>Region</th>
-            <th>Qantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="card in cards">
-            <td class="mdl-data-table__cell--non-numeric">{{card.name}}</td>
-            <td class="mdl-data-table__cell--non-numeric">NA</td>
-            <td>
-              <div style="width:50px">
-                <input class="mdl-textfield__input" type="text" value="{{card.qty}}" style="width: 50px; text-align: right" ng-blur="updateCount(card.number,card.qty)" ng-model="card.qty">
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div>Series 1({{counts.total}})
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Number</th>
+              <th class="mdl-data-table__cell--non-numeric">Name</th>
+              <th>Region</th>
+              <th>Qantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="card in cards">
+              <td class="mdl-data-table__cell--non-numeric">{{card.number}}</td>
+              <td class="mdl-data-table__cell--non-numeric">{{card.name}}</td>
+              <td class="mdl-data-table__cell--non-numeric">NA</td>
+              <td>
+                <div style="width:50px">
+                  <input class="mdl-textfield__input" type="text" value="{{card.qty}}" style="width: 50px; text-align: right" ng-blur="updateCount(card.number,card.qty)" ng-model="card.qty">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+      <div> Missing({{counts.missing}})
+        <div class="mdl-grid mdl-shadow--2dp" style="background-color: white">
+          <div class="mdl-cell mdl-cell--2-col" ng-repeat="card in cards" ng-if="card.qty == 0">
+            <div class="card_image" style="background-image: url('../images/gallery/{{ card.number }}.png')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+      <div> Duplicates({{counts.duplicates}})
+        <div class="mdl-grid mdl-shadow--2dp" style="background-color: white">
+          <div class="mdl-cell mdl-cell--2-col" ng-repeat="card in cards" ng-if="card.qty > 1">
+            <div class="card_image" style="background-image: url('../images/gallery/{{ card.number }}.png')"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
 </div>
