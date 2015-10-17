@@ -1,15 +1,14 @@
 <style>
 .card_image {
   width: 50px;
-  min-height: 50px;
+  min-height: 75px;
   background: url('../images/gallery/001.png') top / cover;
-  background-position-y: -6px;
 }
 </style>
 
-<div class="mdl-grid collection">
+<div class="mdl-grid collection" style="max-width: 1200px">
 
-    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet" style="width: 350px">
       <div>Series 1({{counts.total}})
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
           <thead>
@@ -36,7 +35,7 @@
       </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet" style="width: 350px">
       <div> Missing({{counts.missing}})
         <div class="mdl-grid mdl-shadow--2dp" style="background-color: white">
           <div class="mdl-cell mdl-cell--2-col" ng-repeat="card in cards" ng-if="card.qty == 0">
@@ -45,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet" style="width: 350px">
       <div> Duplicates({{counts.duplicates}})
         <div class="mdl-grid mdl-shadow--2dp" style="background-color: white">
           <div class="mdl-cell mdl-cell--2-col" ng-repeat="card in cards" ng-if="card.qty > 1">
