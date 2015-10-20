@@ -37,6 +37,10 @@ angular
         templateUrl: 'views/collection.html',
         controller: 'CollectionCtrl'
       })
+      .when('/trades', {
+        templateUrl: 'views/trade.html',
+        controller: 'TradeCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

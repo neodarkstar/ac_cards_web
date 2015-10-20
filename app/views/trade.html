@@ -1,0 +1,37 @@
+<style>
+.trade.card_image {
+  width: 50px;
+  min-height: 75px;
+  background: url('../images/gallery/001.png') top / cover;
+}
+
+.trade .container {
+  width: 350px;
+  max-height: 800px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+</style>
+
+<div class="mdl-grid trade" style="max-width: 1200px">
+
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+      <div> {{have.user}}  ({{have.count}})
+        <div class="mdl-grid mdl-shadow--2dp container" style="background-color: white">
+          <div class="mdl-cell mdl-cell--2-col" ng-repeat="cardNumber in have.cards">
+            <div class="trade card_image" style="background-image: url('../images/gallery/{{ cardNumber }}.png')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-phone mdl-cell--4-col-tablet">
+      <div> {{need.user}}  ({{need.count}})
+        <div class="mdl-grid mdl-shadow--2dp container" style="background-color: white">
+          <div class="mdl-cell mdl-cell--2-col" ng-repeat="cardNumber in need.cards">
+            <div class="trade card_image" style="background-image: url('../images/gallery/{{ cardNumber }}.png')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

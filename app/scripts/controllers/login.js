@@ -19,7 +19,8 @@ angular.module('webApp').controller('LoginCtrl', ['$scope','Auth', '$location','
     $scope.menuItems = [
       { href:"#/", name: 'Main' },
       { href:"#/gallery", name: 'Gallery' },
-      { href:'#/collection', name: 'Collection'}
+      { href:'#/collection', name: 'Collection'},
+      { href:'#/trades', name: 'Trades'}
     ];
 
     $scope.credentials = {
