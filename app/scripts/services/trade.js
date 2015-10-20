@@ -8,6 +8,6 @@ angular.module('webApp').factory('Trade', [ '$resource', function($resource){
     'allMatches': { method: 'GET', isArray: true, headers: authorization }
   }
 
-  return $resource('http://localhost:8080/api/trades/:oUserId', { oUserId: '@oUserId' }, options);
+  return $resource('http://www.ideainprogress.com:8080/api/trades/:oUserId', { oUserId: '@oUserId' }, options);
 
 }]);

@@ -9,7 +9,7 @@ angular.module('webApp').factory('Card', [ '$resource', function($resource){
     'updateCount': { method: 'PUT', headers: authorization }
   }
 
-  return $resource('http://localhost:8080/api/users/:userId/cards/:cardId', { userId: sessionStorage.getItem('userId'), cardId: '@cardId'}, options);
+  return $resource('http://www.ideainprogress.com:8080/api/users/:userId/cards/:cardId', { userId: sessionStorage.getItem('userId'), cardId: '@cardId'}, options);
 
 
 }]);
